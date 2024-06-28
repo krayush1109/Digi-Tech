@@ -77,12 +77,50 @@
     </section>
 
     <section id="pg-4" class="min-h-[75rem] w-full px-[17rem]">
-      <div id="header-4" class="flex flex-col items-center">
+      <div id="subTitle-4" class="flex flex-col items-center">
         <h1 class="uppercase text-center text-[3.5rem]">Our Services</h1>
         <p class="text-center text-xl my-12 w-2/3">Comprehensive Website Services to Ignite Your Online Success. Empower
           Your Business with Powerful Online Services from
           our Website.</p>
       </div>
-    </section>
 
+      <div id="cards-container-4" class="flex flex-wrap justify-center gap-8  py-16">
+
+        <% const data4=[ {title: "Website Development" , link: "" ,
+          imgUrl: "https://mojodesign.io/wp-content/uploads/2023/12/Screenshot_7.jpeg"
+          }, {title: "App Development" , link: "" ,
+          imgUrl: "https://d2ms8rpfqc4h24.cloudfront.net/mobile_application_development_ad3f711b7d.jpg" },
+          {title: "Digital Marketing" , link: "" ,
+          imgUrl: "https://media.licdn.com/dms/image/D4D12AQEBJ2677xwr_w/article-cover_image-shrink_720_1280/0/1674400723466?e=2147483647&v=beta&t=QXXHofRqm83oKff-9aL1DvhFBzSyZSRefZ2PkjXhtmU"
+          }, {title: "Website Maintenance" , link: "" ,
+          imgUrl: "https://iaihnwlotim.ac.id/wp-content/uploads/2022/12/Maintenance-Page.jpg" }, 
+          {title: "Graphic Design" , link: "" ,
+          imgUrl: "https://www.georgeanimatrix.com/blog/wp-content/uploads/2023/08/jpeg-optimizer_14-1.jpg" },
+          {title: "Domain & Hosting" , link: "" , imgUrl: "https://www.cloudoye.com/images/blog/the-best-web-hosting-services-for-2019_b2ue%20(1).jpg" },] %>
+
+          <% data4.forEach((item, index)=> { %>
+            <div id="card-4"
+              class="bg-[--card-bg] w-[16rem] h-[19rem] p-3 <%= (index==0)?`bg-[--primary-clr] text-black`:`` %> ">
+              <div class="relative mb-7">
+                <img class="absolute right-4 top-8" src="/images/services/ellipse.png" alt="">
+                <img src="/images/services/<%= index+1 %>.png" class=" pt-8 pl-8 box-content" width="60px" height="60px"
+                  alt="">
+                <a href=""
+                  class="absolute top-0 right-0 bg-[--primary-bg] h-[42px] w-[42px] p-1 pb-[6px] flex justify-center items-center text-3xl text-white "><i
+                    class="ri-arrow-right-up-line"></i></a>
+              </div>
+              <h1 class="text-center text-xl font-semibold h-16 ">
+                <%= item.title %>
+              </h1>
+
+              <img src="<%= item.imgUrl %>" class="object-cover object-center  w-[233px] h-[93px] overflow-hidden"
+                alt="">
+
+            </div>
+            <% }) %>
+
+      </div>
+
+    </section>
+    
     <%- include('./partials/footer') %>
